@@ -2,7 +2,7 @@
   "name": "ci-cd-demo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://varungarg455-ci-cd.herokuapp.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
