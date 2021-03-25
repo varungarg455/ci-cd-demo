@@ -62,17 +62,3 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
           SOURCE_DIR: "build"
-      # - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-      #   with:
-      #     heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-      #     heroku_app_name: "varungarg455-ci-cd" #Must be unique in Heroku
-      #     heroku_email: "varungarg455@gmail.com"
-      # - name: Copying files to server
-      #   uses: appleboy/scp-action@master
-      #   with:
-      #     host: ${{ secrets.REMOTE_HOST }}
-      #     username: ${{ secrets.REMOTE_USER }}
-      #     key: ${{ secrets.SSH_KEY }}
-      #     rm: true
-      #     source: "build"
-      #     target: "~/websites"
