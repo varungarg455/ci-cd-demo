@@ -42,7 +42,7 @@ jobs:
     
     steps:
       - name: Code checkout
-          uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Code deploy
         uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
           with:
