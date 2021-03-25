@@ -35,14 +35,12 @@ jobs:
         run: npm test
       - name: Run builds
         run: npm run build --if-present
-      - name: Rename build folder
-        run: mv build html
       - name: Archive data
         uses: actions/upload-artifact@v2
         with:
-          name: html
+          name: build
           path: |
-            html
+            build
 
   deploy:
     needs: build
@@ -65,5 +63,5 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_KEY }}
           rm: true
-          source: "html"
-          target: "~/stack/nginx/html"
+          source: "build/*.*"
+          target: "~/stack/nginx/html/"
