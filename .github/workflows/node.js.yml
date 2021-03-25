@@ -35,6 +35,14 @@ jobs:
         run: npm run build --if-present
       - name: Run tests
         run: npm test
+      - name: List files
+        run: ls
+      - name: Archive data
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifacts
+          path: |
+            *
 
   deploy:
     needs: build
