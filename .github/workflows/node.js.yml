@@ -64,4 +64,4 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           rm: true
           source: "build/*.*"
-          target: "~/stack/nginx/html/"
+          target: "~/stack/nginx/html/*"
