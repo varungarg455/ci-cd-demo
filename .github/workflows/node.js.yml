@@ -31,16 +31,18 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: Install dependencies
         run: npm i
-      - name: Run builds
-        run: npm run build --if-present
       - name: Run tests
         run: npm test
+      - name: Run builds
+        run: npm run build --if-present
+      - name: Rename build folder
+        run: mv build html
       - name: Archive data
         uses: actions/upload-artifact@v2
         with:
-          name: build
+          name: html
           path: |
-            build
+            html
 
   deploy:
     needs: build
@@ -63,5 +65,5 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_KEY }}
           rm: true
-          source: "build/"
-          target: "~/stack/nginx/html/"
+          source: "html"
+          target: "~/stack/nginx/html"
