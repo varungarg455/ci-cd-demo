@@ -33,8 +33,9 @@ jobs:
       - run: npm test
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
-    requires: build
+    
     steps:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
