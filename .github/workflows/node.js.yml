@@ -49,8 +49,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "varungarg455-ci-cd" #Must be unique in Heroku
-          heroku_email: "varungarg455@gmail.com"
+      - name: Download all workflow run artifacts
+        uses: actions/download-artifact@v2
+      # - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      #   with:
+      #     heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+      #     heroku_app_name: "varungarg455-ci-cd" #Must be unique in Heroku
+      #     heroku_email: "varungarg455@gmail.com"
